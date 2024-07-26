@@ -18,7 +18,8 @@ Delete records by removing data that is no longer needed.
 
 
 ## Test
-[Walk through Video]
+[Walk through Video](https://drive.google.com/file/d/1hCZhYGIdvrYRsn-RbUALvbqBkS6NxBTx/view?usp=sharing)
+
 
 ## Link
-[GitHub]https://github.com/meg-an321/SQL-Employee-Tracker
+[GitHub](https://github.com/meg-an321/SQL-Employee-Tracker)

@@ -48,6 +48,7 @@ app.get('/api/departments', (req, res) => {
 });
 
 // View Roles
+// This query joins the role and department tables to display the job title, role ID, salary, and department name
 app.get('/api/roles', (req, res) => {
   const sql = `SELECT role.title AS "Job Title", role.id AS "Role ID", role.salary AS "Salary", department.name AS "Department" FROM role JOIN department ON department.id = role.department_id;`;
 
@@ -65,6 +66,7 @@ app.get('/api/roles', (req, res) => {
 });
 
 // View Employeees
+// This query joins the employee, role, and department tables to display the employee's first name, last name, job title, department, salary, and manager ID
 app.get('/api/employees', (req, res) => {
   const sql = `SELECT employee.id AS "Employee ID", employee.first_name AS "First Name", employee.last_name AS "Last Name", role.title AS "Job Title", department.name AS "Department", role.salary AS "Salary", employee.manager_id AS "Manager ID" FROM employee JOIN role ON role.id = employee.role_id JOIN department ON department.id = role.department_id;`;
 
@@ -82,6 +84,7 @@ app.get('/api/employees', (req, res) => {
 });
 
 // Add Department
+// This route adds a new department to the department table
 app.post('/api/add-department', (req, res) => {
 	const {name} = req.body;
 
@@ -102,6 +105,7 @@ app.post('/api/add-department', (req, res) => {
 });
 
 // Add Role
+// This route adds a new role to the role table
 app.post('/api/add-role', (req, res) => {
 	const {title, salary, department_id} = req.body;
 
@@ -122,6 +126,7 @@ app.post('/api/add-role', (req, res) => {
 });
 
 // Add employee
+// This route adds a new employee to the employee table
 app.post('/api/add-employee', (req, res) => {
 	const {first_name, last_name, role_id, manager_id} = req.body;
 	const values = [first_name, last_name, role_id]
@@ -162,6 +167,7 @@ app.post('/api/add-employee', (req, res) => {
 });
 
 // Update an Employee's Role
+// This route updates an employee's role in the employee table
 app.post('/api/update-employee-role', (req, res) => {
 	const {employee_id, role_id} = req.body;
 

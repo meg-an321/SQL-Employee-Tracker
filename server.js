@@ -67,6 +67,7 @@ app.get('/api/roles', (req, res) => {
 
 // View Employeees
 // This query joins the employee, role, and department tables to display the employee's first name, last name, job title, department, salary, and manager ID
+// SELECT * FROM employee JOIN role ON role.id = employee.role_id JOIN department ON department.id = role.department_id;
 app.get('/api/employees', (req, res) => {
   const sql = `SELECT employee.id AS "Employee ID", employee.first_name AS "First Name", employee.last_name AS "Last Name", role.title AS "Job Title", department.name AS "Department", role.salary AS "Salary", employee.manager_id AS "Manager ID" FROM employee JOIN role ON role.id = employee.role_id JOIN department ON department.id = role.department_id;`;
 

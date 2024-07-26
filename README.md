@@ -7,6 +7,16 @@ This application is a command line program that helps manage a companies departm
 This application is meant to provide an easy way for non-developers and those unfamiliar with programming, 
 an easy way to interact with databases.
 
+## What I learned
+Bootcamp students, including myself learned how to use postgres and how to write commands in the shell. Through the shell; located in the terimal, we were
+able to delete an existing database and tables and then could create new database and tables. When learning more 
+about SQL students were taught the importance of the acronym CRUD:
+Create new records by adding new data to the database.
+Read data by retrieving and viewing data stored in the database.
+Update existing records by modifying data already present in the database.
+Delete records by removing data that is no longer needed.
+
+
 ## Test
 [Walk through Video]
 

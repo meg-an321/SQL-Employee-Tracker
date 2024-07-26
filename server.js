@@ -1,4 +1,5 @@
 const express = require('express');
+// const inquirer = require('inquirer');
 // Import and require Pool (node-postgres)
 // We'll be creating a Connection Pool. Read up on the benefits here: https://node-postgres.com/features/pooling
 const { Pool } = require('pg');
@@ -32,7 +33,7 @@ app.get('/', (req, res) =>
 
 // View Departments
 app.get('/api/departments', (req, res) => {
-  const sql = `SELECT * FROM department`;
+  const sql = `SELECT * FROM department;`;
 
   pool.query(sql, (err, { rows }) => {
     if (err) {
@@ -50,7 +51,7 @@ app.get('/api/departments', (req, res) => {
 // View Roles
 // This query joins the role and department tables to display the job title, role ID, salary, and department name
 app.get('/api/roles', (req, res) => {
-  const sql = `SELECT role.title AS "Job Title", role.id AS "Role ID", role.salary AS "Salary", department.name AS "Department" FROM role JOIN department ON department.id = role.department_id;`;
+  const sql = `SELECT * FROM role;`;
 
   pool.query(sql, (err, { rows }) => {
     if (err) {
@@ -69,7 +70,7 @@ app.get('/api/roles', (req, res) => {
 // This query joins the employee, role, and department tables to display the employee's first name, last name, job title, department, salary, and manager ID
 // SELECT * FROM employee JOIN role ON role.id = employee.role_id JOIN department ON department.id = role.department_id;
 app.get('/api/employees', (req, res) => {
-  const sql = `SELECT employee.id AS "Employee ID", employee.first_name AS "First Name", employee.last_name AS "Last Name", role.title AS "Job Title", department.name AS "Department", role.salary AS "Salary", employee.manager_id AS "Manager ID" FROM employee JOIN role ON role.id = employee.role_id JOIN department ON department.id = role.department_id;`;
+  const sql = `SELECT * FROM employee;`;
 
   pool.query(sql, (err, { rows }) => {
     if (err) {

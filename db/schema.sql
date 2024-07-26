@@ -13,7 +13,7 @@ CREATE TABLE department (
 
 CREATE TABLE role (
 	id SERIAL PRIMARY KEY,
-	title VARCHAR(30) UNIQUE NOT NULL, 
+	title VARCHAR(100) UNIQUE NOT NULL, 
 	salary DECIMAL NOT NULL,
 	department_id INTEGER NOT NULL,
 	FOREIGN KEY (department_id) -- department_id is a foreign key that references the id column in the department table (*schema*)

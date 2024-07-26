@@ -1,4 +1,6 @@
-INSERT INTO department (name) -- Do not have to include id which is SERIAL
+-- This data will be used to test the application
+-- department TABLE
+INSERT INTO department (name) 
 VALUES 	('Marketing'),
 		('Sales'),
 		('Information Technology'),
